@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+        // start-up css properties
+        document.body.style.padding = '0 ';
+        document.body.style.fontFamily = 'Helvetica';
+        document.body.style.backgroundImage = "url('https://images.unsplash.com/photo-1574797914072-46cc7da9b5aa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=800')";
+        document.body.style.backgroundSize = 'cover'
+            // document.body.style.backgroundRepeat = 'no-repeat'
+
+        document.title = 'Log In Form Application';
+
+        document.body.onload = () => {
+
+            // ---------------Log-In Form--------
+
+            var divElem = document.createElement('div');
+            divElem.id = 'div1';
+            divElem.style.width = '50vw';
+            divElem.style.height = '50vh';
+            divElem.style.background = 'rgb(218,179,152';
+            divElem.style.opacity = ('0.8');
+            divElem.style.display = 'flex';
+            divElem.style.flexDirection = 'column';
+            divElem.style.transform = 'translate(50%,50%)';
+            divElem.style.alignItems = 'center';
+            divElem.style.justifyContent = 'center';
+            document.body.appendChild(divElem);
+
+            // ------------- <h3> tag ---------------
+
+            var h1Elem = document.createElement('h1');
+            h1Elem.innerHTML = 'Welcome';
+            document.getElementById('div1').appendChild(h1Elem);
+
+            // ------------- <img> tag ---------------
+
+            var imgElem = document.createElement('img');
+            imgElem.src = 'http://logosolusa.com/wp-content/uploads/parser/Random-Logo-1.png';
+            imgElem.alt = 'random-logo';
+            imgElem.style.width = '75px';
+            imgElem.style.height = '75px';
+            imgElem.style.margin = '10px'
+            document.querySelector('div').appendChild(imgElem)
+
+
+            // ------------- <form> tag ---------------
+
+            // creating form
+            var logInForm = document.createElement('form');
+            logInForm.style.display = 'flex';
+            logInForm.style.flexDirection = 'column';
+            logInForm.style.alignItems = 'center';
+            logInForm.style.justifyContent = 'center';
+            document.getElementById('div1').appendChild(logInForm);
+
+
+            // ------------- <input1> tag ---------------
+
+            // creating inputs
+
+            var input1 = document.createElement('input');
+            input1.id = 'userNameInput';
+            input1.type = 'text';
+            input1.placeholder = 'Username'
+            input1.innerHTML = 'admin';
+            // input1.setAttribute('onchange', 'checkValue(this)');
+            input1.style.padding = '10px 12px';
+            input1.style.marginBottom = '10px'
+            document.getElementsByTagName('form')[0].appendChild(input1);
+
+            // ------------- <input2> tag ---------------
+
+            var input2 = document.createElement('input');
+            input2.id = 'userSurnameInput';
+            input2.type = 'password';
+            input2.placeholder = 'Password'
+            input2.innerHTML = 'admin';
+            input2.setAttribute('onchange', 'checkValue(this)');
+            input2.style.padding = '10px 12px';
+            input2.style.marginBottom = '10px'
+            document.getElementsByTagName('form')[0].appendChild(input2);
+
+            // ------------- <input3> tag ---------------
+
+            var input3 = document.createElement('input');
+            input3.id = 'submitInput';
+            input3.type = 'submit';
+            input3.innerHTML = 'Submit';
+            input3.setAttribute('onchange', 'getValue()');
+            input3.style.padding = '14px 16px';
+            input3.style.display = 'block'
+            document.querySelector('form').appendChild(input3);
+
+
+
+            // ------------<div> tag to appear later ---------------
+
+            var divElem2 = document.createElement('div');
+            divElem2.id = 'div2';
+            divElem2.style.width = '50vw';
+            divElem2.style.height = '50vh';
+            divElem2.style.background = '#B98162';
+            divElem2.style.display = 'flex';
+            divElem2.style.flexDirection = 'column';
+            divElem2.style.alignItems = 'center';
+            divElem2.style.justifyContent = 'center';
+            divElem2.style.transform = 'translateX(-900px)';
+            divElem2.style.transition = 'all 1s linear';
+            document.body.appendChild(divElem2);
+
+
+            var div2HElem = document.createElement('h1');
+            div2HElem.innerHTML = 'Welcome!'
+            document.getElementById('div2').appendChild(div2HElem)
+
+            var divText = document.createElement('h3');
+            divText.innerHTML = 'You are successfully logged in.';
+            document.getElementById('div2').appendChild(divText)
+        }
+
+        // ----------------------onload() ends here-------------
+
+        var inputValue;
+        var inputValue2;
+
+        function checkValue(e) {
+
+            inputValue = e.value;
+            inputValue2 = e.value;
+
+            if (inputValue && inputValue2 != 'admin') {
+                alert('Wrong username or password. Please try again!');
+            } else {
+                getValue();
+            }
+            document.querySelectorAll('div input')[0].value = '';
+            document.querySelectorAll('div input')[1].value = '';
+        }
+
+
+        function getValue() {
+
+            document.getElementById('div2').style.transform = 'translate(50%,-50%)';
+            document.getElementById('div1').style.transform = 'translateX(-1000px)';
+            document.getElementById('div1').style.transform = 'all 1s linear';
+            // document.getElementById('div1').style.visibility = 'hidden';
+
+        };
+    </script>
+
+</body>
+
+</html>
