@@ -109,11 +109,12 @@
             divElem2.style.justifyContent = 'center';
             divElem2.style.transform = 'translateX(-900px)';
             divElem2.style.transition = 'all 1s linear';
+            divElem2.style.opacity = '0.8'
             document.body.appendChild(divElem2);
 
 
             var div2HElem = document.createElement('h1');
-            div2HElem.innerHTML = 'Welcome!'
+            div2HElem.innerHTML = 'Welcome!';
             document.getElementById('div2').appendChild(div2HElem)
 
             var divText = document.createElement('h3');
@@ -127,10 +128,8 @@
         var inputValue2;
 
         function checkValue(e) {
-
             inputValue = e.value;
             inputValue2 = e.value;
-
             if (inputValue && inputValue2 != 'admin') {
                 alert('Wrong username or password. Please try again!');
             } else {
